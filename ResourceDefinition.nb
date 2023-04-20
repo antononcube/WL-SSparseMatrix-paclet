@@ -2785,10 +2785,10 @@ Cell["Column- and row binding of sparse matrices.", "Notes",
  CellTags->"DefaultContent",
  CellID->632127126,ExpressionUUID->"cf733f5b-c79a-4bf4-8237-f14449f1af85"],
 
-Cell["Column- and row  sums.", "Notes",
+Cell["Column- and row sums.", "Notes",
  TaggingRules->{},
  CellChangeTimes->{{3.8909739089136353`*^9, 3.8909739361155367`*^9}, {
-  3.8909778695568247`*^9, 3.890977872162575*^9}},
+   3.8909778695568247`*^9, 3.890977872162575*^9}, 3.8909834757848043`*^9},
  CellTags->"DefaultContent",
  CellID->417855202,ExpressionUUID->"5fe14d01-f1b3-445c-a5c0-18398fdbb26e"],
 
@@ -4942,11 +4942,12 @@ operations for them. (With other ",
  CellID->461891642,ExpressionUUID->"3080a8a3-ac15-4ef2-bb6f-3a5a65d10076"],
 
 Cell["\<\
-This function is used to visualize the commands, the results, and the results\
-\[CloseCurlyQuote] heads.\
+This function is used to visualize the commands, the results, and the \
+results' heads:\
 \>", "Text",
  TaggingRules->{},
- CellChangeTimes->{{3.731670034236883*^9, 3.731670068536314*^9}},
+ CellChangeTimes->{{3.731670034236883*^9, 3.731670068536314*^9}, {
+  3.890982978927746*^9, 3.890982979193603*^9}},
  CellID->2041172870,ExpressionUUID->"30ac6278-c526-4899-9896-81cddd5c165d"],
 
 Cell[BoxData[{
