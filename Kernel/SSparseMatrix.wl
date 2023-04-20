@@ -111,7 +111,7 @@ SSparseMatrix::dnsame =
     "The dimension names `1` are the same; using {\"1\", \"2\"} instead.";
 
 ToSSparseMatrix::arg1 =
-    "The first argument is expected to be a sparse array, a dataset with two dimensions, or a SSparseMatrix object";
+    "The first argument is expected to be a sparse array, a dataset with two dimensions, a list of sparse array rules, or a SSparseMatrix object";
 
 Options[MakeSSparseMatrix] = {"RowNames" -> None, "ColumnNames" -> None, "DimensionNames" -> None};
 
@@ -248,6 +248,9 @@ ToSSparseMatrix[xtabs_Association, opts : OptionsPattern[] ] :=
 ToSSparseMatrix[arules : Association[ ({_String, _String} -> _?NumericQ) .. ], opts : OptionsPattern[] ] :=
     ToSSparseMatrix[ KeyValueMap[ Join[#1, {#2}]&, arules ], opts];
 
+ToSSparseMatrix[rules : {_Rule..}, dims_, val_, opts : OptionsPattern[]] :=
+    MakeSSparseMatrix[rules, dims, val, opts];
+
 ToSSparseMatrix[aRows : Association[ (_String -> Association[ (_String -> _?NumericQ) .. ]).. ], opts : OptionsPattern[] ] :=
     Block[{arules},
       arules = Join @@ KeyValueMap[ Function[{k, v}, KeyMap[ {k, #}&, v]], aRows];
@@ -281,7 +284,7 @@ SparseArray[rmat_SSparseMatrix] ^:= First[rmat]["SparseMatrix"];
 (* Setters *)
 
 (*SetAttributes[SetRowNames, HoldFirst]*)
-SetRowNames[ rmat_, names_ : {_String..} ] :=
+SetRowNames[ rmat_, names : {_String..} ] :=
     Block[{res},
       res = ToSSparseMatrix[rmat, "RowNames" -> names, "ColumnNames" -> ColumnNames[rmat], "DimensionNames" -> DimensionNames[rmat]];
       If[ Head[res] === SSparseMatrix,
@@ -291,7 +294,7 @@ SetRowNames[ rmat_, names_ : {_String..} ] :=
     ];
 
 (*SetAttributes[SetColumnNames, HoldFirst]*)
-SetColumnNames[ rmat_, names_ : {_String..} ] :=
+SetColumnNames[ rmat_, names : {_String..} ] :=
     Block[{res},
       res = ToSSparseMatrix[rmat, "RowNames" -> RowNames[rmat], "ColumnNames" -> names, "DimensionNames" -> DimensionNames[rmat]];
       If[ TrueQ[Head[res] === SSparseMatrix],
@@ -302,7 +305,7 @@ SetColumnNames[ rmat_, names_ : {_String..} ] :=
 
 
 (*SetAttributes[SetDimensionNames, HoldFirst]*)
-SetDimensionNames[ rmat_, names_ : {_String..} ] :=
+SetDimensionNames[ rmat_, names : {_String..} ] :=
     Block[{res},
       res = ToSSparseMatrix[rmat, "RowNames" -> RowNames[rmat], "ColumnNames" -> ColumnNames[rmat], "DimensionNames" -> names];
       If[ TrueQ[Head[res] === SSparseMatrix],
