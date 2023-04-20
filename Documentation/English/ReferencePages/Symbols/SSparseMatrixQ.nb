@@ -280,7 +280,7 @@ Cell["Metadata", "MetadataSection",
 
 Cell[TextData[{
  "New in: ",
- Cell["XX", "HistoryData",
+ Cell["1.0.0", "HistoryData",
   CellTags->"New",ExpressionUUID->"c0899499-dd30-4dc3-b73f-a665f768d31e"],
  " | Modified in: ",
  Cell[" ", "HistoryData",
