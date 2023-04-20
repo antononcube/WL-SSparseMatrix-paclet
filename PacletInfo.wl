@@ -5,7 +5,7 @@ PacletObject[
     "Name" -> "AntonAntonov/SSparseMatrix",
     "Description" -> "Sparse matrices with named rows and columns",
     "Creator" -> "Anton Antonov",
-    "License" -> "Artistic License 2.0",
+    "License" -> "Artistic-2.0",
     "PublisherID" -> "AntonAntonov",
     "Version" -> "1.0.0",
     "WolframVersion" -> "12.0+",
