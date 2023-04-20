@@ -3,11 +3,11 @@
 PacletObject[
   <|
     "Name" -> "AntonAntonov/SSparseMatrix",
-    "Description" -> "Sparse matrices with named rows and columns",
+    "Description" -> "Sparse matrices with named columns and rows",
     "Creator" -> "Anton Antonov",
     "License" -> "Artistic-2.0",
     "PublisherID" -> "AntonAntonov",
-    "Version" -> "1.0.0",
+    "Version" -> "1.0.1",
     "WolframVersion" -> "12.0+",
     "Extensions" -> {
       {
