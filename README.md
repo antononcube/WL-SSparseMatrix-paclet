@@ -1,28 +1,24 @@
 # SSparseMatrix WL paclet
 
+This Wolfram Language (WL) paclet provides objects that are sparse matrices with named columns and rows (based on `SparseArray`.)
+
 ![05xnlad9p43v8](./Documentation/Diagrams/05xnlad9p43v8.png)
 
-### Basic Description
+The provided functionalities include:
 
-The paclet provides objects that are sparse matrices with named columns and rows (based on `SparseArray`.)
+- Sub-matrix extraction by column- and row names
 
-### Details
+- Column- and row names propagation for dot products
 
-Sub-matrix extraction by column- and row names.
+- Column- and row binding of sparse matrices
 
-Column- and row names propagation for dot products.
+- Column- and row sums
 
-Column- and row binding of sparse matrices.
+- Tabulation and visualization (of sparse matrices with named rows and columns)
 
-Column- and row  sums.
+-----
 
-Tabulation and visualization (of sparse matrices with named rows and columns.)
-
-![1q190r7wgwk2g](./Documentation/Diagrams/1q190r7wgwk2g.png)
-
-## Examples
-
-### Basic Examples
+## Basic examples
 
 Here we create a [SSparseMatrix](https://reference.wolfram.com/language/AntonAntonov/SSparseMatrix/ref/SSparseMatrix) object:
 
@@ -52,9 +48,9 @@ smat // MatrixPlot
 
 ![0u0575pde683p](./Documentation/Diagrams/0u0575pde683p.png)
 
-### Scope
+## Extended examples
 
-#### Query functions
+### Query functions
 
 These functions can be used to retrieve the names of rows, columns, and dimensions:
 
@@ -102,7 +98,7 @@ ArrayRules[smat]
 (*{{1, 1} -> 1, {1, 4} -> 4, {2, 2} -> 2, {3, 5} -> 2, {4, 3} -> 3, {_, _} -> 0}*)
 ```
 
-#### Set row names
+### Set row names
 
 Here is a copy of the sparse matrix:
 
@@ -129,7 +125,7 @@ MatrixForm[smat2]
 
 ![1k6v3y5ymi1wk](./Documentation/Diagrams/1k6v3y5ymi1wk.png)
 
-#### Set column names
+### Set column names
 
 Here we set different column names:
 
@@ -147,7 +143,7 @@ MatrixForm[smat2]
 
 ![01pwhe86usmz2](./Documentation/Diagrams/01pwhe86usmz2.png)
 
-#### Transpose
+### Transpose
 
 Here we transpose and show the matrix form:
 
@@ -157,7 +153,7 @@ Transpose[smat] // MatrixForm
 
 ![0p8dp1ut4mow7](./Documentation/Diagrams/0p8dp1ut4mow7.png)
 
-#### Sums
+### Sums
 
 Here is the sum of all elements:
 
@@ -199,7 +195,7 @@ ColumnSumsAssociation[smat]
 (*<|"a" -> 1, "b" -> 2, "c" -> 3, "d" -> 4, "e" -> 2|>*)
 ```
 
-#### Dot products
+### Dot products
 
 In order to make the 
 [`SSparseMatrix`](https://reference.wolfram.com/language/AntonAntonov/SSparseMatrix/ref/SSparseMatrix) 
@@ -220,7 +216,7 @@ ResultsGrid[expressions_Inactive, opts___] :=
    ];
 ```
 
-#### Matrix by vector multiplication
+### Matrix by vector multiplication
 
 ```mathematica
 ResultsGrid[Inactive[{smat, Transpose@smat[[{1}, All]], smat . Transpose@smat[[{1}, All]]}], Dividers -> All]
@@ -234,7 +230,7 @@ ResultsGrid[Inactive[{smat, smat[[1, All]], smat . smat[[1, All]]}], Dividers ->
 
 ![1uge6ln30k2v8](./Documentation/Diagrams/1uge6ln30k2v8.png)
 
-#### Matrix by matrix multiplication
+### Matrix by matrix multiplication
 
 Here is a sparse matrix (2D sparse array):
 
@@ -278,7 +274,7 @@ ResultsGrid[Inactive[{SparseArray[smat], SparseArray[rmat2], SparseArray[smat] .
 
 ![0yn6bgv6u1omn](./Documentation/Diagrams/0yn6bgv6u1omn.png)
 
-#### Part
+### Part
 
 A major useful feature is to have `Part` work with row and column names. 
 The implementation of that additional functionality for Part is demonstrated below.
@@ -325,7 +321,7 @@ ResultsGrid[Inactive[
 
 ![0xg0tlxidl96v](./Documentation/Diagrams/0xg0tlxidl96v.png)
 
-#### Column-binding and row-binding
+### Column-binding and row-binding
 
 Row- and column binding are useful in various data analysis scenarios.
 
