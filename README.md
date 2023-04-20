@@ -1,8 +1,8 @@
 # SSparseMatrix WL paclet
 
-This Wolfram Language (WL) paclet provides objects that are sparse matrices with named columns and rows (based on `SparseArray`.)
-
-![05xnlad9p43v8](./Documentation/Diagrams/05xnlad9p43v8.png)
+This Wolfram Language (WL) paclet provides objects that are sparse matrices with named columns and rows 
+(based on 
+[`SparseArray`](https://reference.wolfram.com/language/ref/SparseArray.html).)
 
 The provided functionalities include:
 
@@ -15,6 +15,8 @@ The provided functionalities include:
 - Column- and row sums
 
 - Tabulation and visualization (of sparse matrices with named rows and columns)
+
+![05xnlad9p43v8](./Documentation/Diagrams/05xnlad9p43v8.png)
 
 -----
 
@@ -47,6 +49,8 @@ smat // MatrixPlot
 ```
 
 ![0u0575pde683p](./Documentation/Diagrams/0u0575pde683p.png)
+
+------
 
 ## Extended examples
 
